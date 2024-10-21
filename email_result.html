@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matching App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <div class="container">
+    <h1>Email Validatiion Result</h1>
+    {% if result %}
+    <p>{{ result | safe }}</p>
+    {% endif %}
+
+    <form action="/email-validation" method="GET">
+        <button type="submit">Go to Email Validation</button>
+    </form>
+    <br>
+
+    <form action="/index-form" method="GET">
+        <button type="submit">Go to Regex Matching</button>
+    </form>
+    <br>
+    <form action="/" method="GET">
+        <button type="submit">Go to Home</button>
+    </form>
+</div>
+</body>
+</html>

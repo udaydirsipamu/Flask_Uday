@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matching Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <div class="container">
+    <h1>Welcome to Regex Result</h1>
+    <p>Test String: {{ test_string }}</p>
+    <p>Regex: {{ regex }}</p>
+
+    {% if matches %}
+    <h2>Matches Found:</h2>
+    <ul>
+        {% for i in matches %}
+        <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No matches found.</p>
+    {% endif %}
+
+    <form action="/index-form" method="GET">
+        <button type="submit">Go to Regex Matching Form</button>
+    </form>
+    <br>
+
+    <form action="/email-validation" method="GET">
+        <button type="submit">Go to Email Validation</button>
+    </form>
+    <br>
+
+    <form action="/" method="GET">
+        <button type="submit">Go to Home</button>
+    </form>
+</div>
+</body>
+</html>
